@@ -4293,4 +4293,192 @@ echo "*.txt" >> .gitignore   # opcional si no quieres subir wordlists[K
 [K[?25h[K
 ]2;echo "diccionarios/" >> .gitignore; echo "*.txt" >> .gitignore]1;echo[1m[7m%[27m[1m[0m                                                                                                       ]2;mat@mat:~/Documentos/htb]1;..ocumentos/htb]7;file://mat/home/mat/Documentos/htb\[0m[27m[24m[J[0m[34m[49m[39m
 
-[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[32m  [32m master [34m?2[0m[34m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m                                      [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:20:54[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?1h[?2004hgit add .
+git commit -m "Initial clean commit"[K
+[K[A[A[4C[32mg[32mi[32mt[39m[5C[4m.[24m[1B[32mg[32mi[32mt[39m[11C[33m"[33mI[33mn[33mi[33mt[33mi[33ma[33ml[33m [33mc[33ml[33me[33ma[33mn[33m [33mc[33mo[33mm[33mm[33mi[33mt[33m"[39m[1B[K[?1l[?2004l[?25l[A[A[A[A[0m[27m[24m[J[0m[49m[27m[24m[32m❯[0m[32m[49m[39m[27m[24m [32mgit[39m add [4m.[24m[K
+[32mgit[39m commit -m [33m"Initial clean commit"[39m[K
+[K[?25h[K
+]2;git add .; git commit -m "Initial clean commit"]1;gitadvertencia: agregando repositorio de git embebido: GAVEL/scripts/gavel_source
+[33mhint: You've added another git repository inside your current repository.[m
+[33mhint: Clones of the outer repository will not contain the contents of[m
+[33mhint: the embedded repository and will not know how to obtain it.[m
+[33mhint: If you meant to add a submodule, use:[m
+[33mhint:[m
+[33mhint: 	git submodule add <url> GAVEL/scripts/gavel_source[m
+[33mhint:[m
+[33mhint: If you added this path by mistake, you can remove it from the[m
+[33mhint: index with:[m
+[33mhint:[m
+[33mhint: 	git rm --cached GAVEL/scripts/gavel_source[m
+[33mhint:[m
+[33mhint: See "git help submodule" for more information.[m
+[33mhint: Disable this message with "git config set advice.addEmbeddedRepo false"[m
+[master (commit-raíz) ebfbd61] Initial clean commit
+ 8 files changed, 4328 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 GAVEL/credentials
+ create mode 100644 GAVEL/ffuf_gavel.json
+ create mode 100644 GAVEL/nmap_scan
+ create mode 100644 GAVEL/rule_netcat
+ create mode 160000 GAVEL/scripts/gavel_source
+ create mode 100644 GAVEL/typescript
+ create mode 100644 GAVEL/versiones
+[1m[7m%[27m[1m[0m                                                                                                       ]2;mat@mat:~/Documentos/htb]1;..ocumentos/htb]7;file://mat/home/mat/Documentos/htb\[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[32m  [32m master[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m                                         [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:20:57[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?1h[?2004hgit remote add origin https://github.com/mat1520/NOMBRE-DEL-REPO.git
+[K[A[4C[32mg[32mi[32mt[39m[1B[K[A[72C                   =                             N  n https://github.com/mat1520/HACK-THE-BOX.git[1B[90mg[90mi[90mt[90m [90mb[90mr[90ma[90mn[90mc[90mh[90m [90m-[90mM[90m [90mm[90ma[90mi[90mn[39m
+[90mgit push -u origin main[39m[K[A[A[46C[1B[K[1B[K[A[A[69C[?1l[?2004l[?25l[A[A[0m[27m[24m[J[0m[49m[27m[24m[32m❯[0m[32m[49m[39m[27m[24m [32mgit[39m remote add origin https://github.com/mat1520/HACK-THE-BOX.git[K
+[K[A[67C[?25h[1B[K[A[67C[1B
+]2;git remote add origin https://github.com/mat1520/HACK-THE-BOX.git]1;git[1m[7m%[27m[1m[0m                                                                                                       ]2;mat@mat:~/Documentos/htb]1;..ocumentos/htb]7;file://mat/home/mat/Documentos/htb\[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m master [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                      [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:21:50[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?1h[?2004h[H[2J[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m master [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                      [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:21:50[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?25l[A[A[0m[27m[24m[J[0m[34m[49m[39m
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m master [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                      [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:21:50[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?25hgit branch -M main
+git push -u origin main[K
+[K[A[A[4C[32mg[32mi[32mt[39m[1B[32mg[32mi[32mt[39m[1B[K[?1l[?2004l[?25l[A[A[A[0m[27m[24m[J[0m[49m[27m[24m[32m❯[0m[32m[49m[39m[27m[24m [32mgit[39m branch -M main[K
+[32mgit[39m push -u origin main[K
+[K[?25h[K
+]2;git branch -M main; git push -u origin main]1;gitUsername for 'https://github.com': mat5120
+Password for 'https://mat5120@github.com': 
+Enumerando objetos: 11, listo.
+Contando objetos:   9% (1/11)Contando objetos:  18% (2/11)Contando objetos:  27% (3/11)Contando objetos:  36% (4/11)Contando objetos:  45% (5/11)Contando objetos:  54% (6/11)Contando objetos:  63% (7/11)Contando objetos:  72% (8/11)Contando objetos:  81% (9/11)Contando objetos:  90% (10/11)Contando objetos: 100% (11/11)Contando objetos: 100% (11/11), listo.
+Compresión delta usando hasta 8 hilos
+Comprimiendo objetos:  12% (1/8)Comprimiendo objetos:  25% (2/8)Comprimiendo objetos:  37% (3/8)Comprimiendo objetos:  50% (4/8)Comprimiendo objetos:  62% (5/8)Comprimiendo objetos:  75% (6/8)Comprimiendo objetos:  87% (7/8)Comprimiendo objetos: 100% (8/8)Comprimiendo objetos: 100% (8/8), listo.
+Escribiendo objetos:   9% (1/11)Escribiendo objetos:  18% (2/11)Escribiendo objetos:  27% (3/11)Escribiendo objetos:  36% (4/11)Escribiendo objetos:  45% (5/11)Escribiendo objetos:  54% (6/11)Escribiendo objetos:  63% (7/11)Escribiendo objetos:  72% (8/11)Escribiendo objetos:  81% (9/11)Escribiendo objetos:  90% (10/11), 1.05 MiB | 1.44 MiB/sEscribiendo objetos: 100% (11/11), 1.05 MiB | 1.44 MiB/sEscribiendo objetos: 100% (11/11), 1.13 MiB | 1.35 MiB/s, listo.
+Total 11 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/mat1520/HACK-THE-BOX.git
+ * [new branch]      main -> main
+rama 'main' configurada para rastrear 'origin/main'.
+[1m[7m%[27m[1m[0m                                                                                                       ]2;mat@mat:~/Documentos/htb]1;..ocumentos/htb]7;file://mat/home/mat/Documentos/htb\[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m main [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                 [0m[49m[33m  10s[0m[33m[49m[33m[0m[33m[49m[33m[0m[33m[49m[36m   scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:22:05[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?1h[?2004h[H[2J[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m main [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                 [0m[49m[33m  10s[0m[33m[49m[33m[0m[33m[49m[33m[0m[33m[49m[36m   scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:22:05[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?25l[A[A[0m[27m[24m[J[0m[34m[49m[39m
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m main [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                 [0m[49m[33m  10s[0m[33m[49m[33m[0m[33m[49m[33m[0m[33m[49m[36m   scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:22:05[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?25hls ~/.ssh
+[K[A[4C[32ml[32ms[39m [4m~[4m/[4m.[4ms[4ms[4mh[24m[1B[K'[1m[31m'[0m[39m[K[?1l[?2004l[?25l[A[A[0m[27m[24m[J[0m[49m[27m[24m[32m❯[0m[32m[49m[39m[27m[24m [32mls[39m [4m~/.ssh[24m[K
+[K[?25h[K
+]2;ls --color=tty ~/.ssh]1;lsknown_hosts  [0m[00;90mknown_hosts.old[0m
+[1m[7m%[27m[1m[0m                                                                                                       ]2;mat@mat:~/Documentos/htb]1;..ocumentos/htb]7;file://mat/home/mat/Documentos/htb\[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m main [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                        [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:23:08[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?1h[?2004h[H[2J[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m main [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                        [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:23:08[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?25l[A[A[0m[27m[24m[J[0m[34m[49m[39m
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m main [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                        [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:23:08[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?25hc[32mc[39m[32mc[39m[90md htb/[39m[39m [39m [39m [39m [39m [39m [39m c[32mc[39m[32mc[39m[90md htb/[39m[32mc[32md[39m[32mc[32md[32m [39m[32mc[32md[39m[39m [39m.[39m [39m [39m [4m.[24m[90m.[39m[4m.[39m[4m.[24m[?1l[?2004l[?25l[A[0m[27m[24m[J[0m[49m[27m[24m[32m❯[0m[32m[49m[39m[27m[24m [32mcd[39m [4m..[24m[K[?25h
+]2;cd ..]1;cd[1m[7m%[27m[1m[0m                                                                                                       ]2;mat@mat:~/Documentos]1;~/Documentos]7;file://mat/home/mat/Documentos\[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/[34mDocumentos[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m[30m[0m[30m[49m[39m                                                         [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:23:19[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?1h[?2004hc[32mc[39m[32mc[39m[90md ..[39m[32mc[32md[39m[32mc[32md[32m [39m[32mc[32md[39m[39m [?7l[31m…[39m[?7h[39m [39m 
+[J[01;34mhtb[0m/              [J[01;34mmcp[0m/              [J[01;34mObsidian\ Vault[0m/  [J[01;34mPYTHON[0m/         [J[A[0m[27m[24m[0m[27m[24m[39m[49m[4C[32mcd[39m[K[94C[0m[49m[39m[34m─╯[39m[0m[27m[24m[39m[49m[95D[A[A[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/[34mDocumentos[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m[30m[0m[30m[49m[39m                                                         [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:23:19[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[32mcd[39m[K[94C[0m[49m[39m[34m─╯[39m[95D
+[J[01;34mhtb[0m/              [J[01;34mmcp[0m/              [J[01;34mObsidian\ Vault[0m/  [J[01;34mPYTHON[0m/         [J[A[0m[27m[24m[0m[27m[24m[39m[49m[4C[32mcd[39m[K[94C[0m[49m[39m[34m─╯[39m[0m[27m[24m[39m[49m[95D[90m..[39m[39m [39m [?1l[?2004l[?25l[A[A[0m[27m[24m[J[0m[49m[27m[24m[32m❯[0m[32m[49m[39m[27m[24m [32mcd[39m[K[1C[?25h
+]2;cd]1;cd[1m[7m%[27m[1m[0m                                                                                                       ]2;mat@mat:~]1;~]7;file://mat/home/mat\[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m[30m[0m[30m[49m[39m                                                                    [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:23:22[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?1h[?2004h[H[2J[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m[30m[0m[30m[49m[39m                                                                    [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:23:22[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?25l[A[A[0m[27m[24m[J[0m[34m[49m[39m
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m[30m[0m[30m[49m[39m                                                                    [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:23:22[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?25hssh-keygen -t ed25519 -C "tu_email@gmail.com"
+[K[A[4C[32ms[32ms[32mh[32m-[32mk[32me[32my[32mg[32me[32mn[39m[15C[33m"[33mt[33mu[33m_[33me[33mm[33ma[33mi[33ml[33m@[33mg[33mm[33ma[33mi[33ml[33m.[33mc[33mo[33mm[33m"[39m[1B[K[A[49C[1C[33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33m"[39m[39m [33ma[33m"[39m[33m"[39m[39m [33m"[39m[39m [33ma[33m"[39m[33mz[33m"[39m[33ma[33m"[39m[33mz[33m"[39m[33ma[33m"[39m[33m"[39m[39m [33m"[39m[39m [33ma[33m"[39m[33mz[33m"[39m[33ma[33m"[39m[33my[33m"[39m[33m0[33m"[39m[33m9[33m"[39m[33m@[33m"[39m[33mg[33m"[39m[33mm[33m"[39m[33ma[33m"[39m[33mi[33m"[39m[33ml[33m"[39m[33m.[33m"[39m[33mc[33m"[39m[33mo[33m"[39m[33mm[33m"[39m[?1l[?2004l[?25l[A[0m[27m[24m[J[0m[49m[27m[24m[32m❯[0m[32m[49m[39m[27m[24m [32mssh-keygen[39m -t ed25519 -C [33m"azaazay09@gmail.com"[39m[K
+[K[A[47C[?25h[1B[K[A[47C[1B
+]2;ssh-keygen -t ed25519 -C "azaazay09@gmail.com"]1;ssh-keygenGenerating public/private ed25519 key pair.
+Enter file in which to save the key (/home/mat/.ssh/id_ed25519): 
+Enter passphrase for "/home/mat/.ssh/id_ed25519" (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/mat/.ssh/id_ed25519
+Your public key has been saved in /home/mat/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:l9u1d6lkm5vVQd2XqO6wP8CEo2+RDQk66LNkbRo684I azaazay09@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|                 |
+|     .        . +|
+|  . . . o    . o+|
+| . o   = . .. . .|
+|. . . . S o.  .. |
+| * o . o =.o . .+|
+|= *   . ..o..o.o+|
+|Eo     o  +.o *..|
+| =.   .  ..o.*.  |
++----[SHA256]-----+
+[1m[7m%[27m[1m[0m                                                                                                       ]2;mat@mat:~]1;~]7;file://mat/home/mat\[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m[30m[0m[30m[49m[39m                                                             [0m[49m[33m  11s[0m[33m[49m[33m[0m[33m[49m[33m[0m[33m[49m[36m   scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:23:49[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?1h[?2004hcat ~/.ssh/id_ed25519.pub
+[K[A[4C[32mc[32ma[32mt[39m [4m~[4m/[4m.[4ms[4ms[4mh[4m/[4mi[4md[4m_[4me[4md[4m2[4m5[4m5[4m1[4m9[4m.[4mp[4mu[4mb[24m[1B[K[?1l[?2004l[?25l[A[A[A[0m[27m[24m[J[0m[49m[27m[24m[32m❯[0m[32m[49m[39m[27m[24m [32mcat[39m [4m~/.ssh/id_ed25519.pub[24m[K
+[K[?25h[K
+]2;cat ~/.ssh/id_ed25519.pub]1;catssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPkSJWGZ9mA8Vu4NRZG25/tg+qyh20a4+TY70fCMvvJt azaazay09@gmail.com
+[1m[7m%[27m[1m[0m                                                                                                       ]2;mat@mat:~]1;~]7;file://mat/home/mat\[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m[30m[0m[30m[49m[39m                                                                    [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:23:55[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?1h[?2004hc[32mc[39m[32mc[39m[90mat ~/.ssh/id_ed25519.pub[39m
+[K[A[5C[32mc[32md[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [1B[K[A[6C[90m [39m[32mc[32md[32m [39m[32mc[32md[39m[39m d[90miccionarios[39m[11D[39mo[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [10D[90ms[39m [39m [90miccionarios[39m[11D[39mc[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [10D [90miccionarios[39m[11D[39mo[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [10D[90ms[39m[39mc[?7l[31m…[39m[?7h[4mD[4mo[4mc[4mumentos[1m[4m/[0m[24m[A[A[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m[30m[0m[30m[49m[39m                                                                    [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:23:55[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[32mcd[39m [4mDocumentos[1m[4m/[0m[24m[K[82C[0m[49m[39m[34m─╯[39m[84D[90mhtb/GAVEL[39m[9D[1m[4m/[39m[1m[4mh[0m[24m[0m[4m/[0m[4mh[24m[4mh[39m[4mr[24m[39m [39m [39m [39m [39m [39m [39m [13D[24mD[24mo[24mc[24mu[24mm[24me[24mn[24mt[24mo[24ms[24m/[24mh[24mr [12D[4mD[4mo[4mc[4mu[4mm[4me[4mn[4mt[4mo[4ms[4m/[4mh[24m[90mtb/GAVEL[39m[8D[?7l[31m…[39m[?7h[4mh[39m[4mt[39m[4mb[39m[1m[4m/[0m[24m[39m [39m [39m [39m [39m [A[A[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m[30m[0m[30m[49m[39m                                                                    [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:23:55[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[32mcd[39m [4mDocumentos/htb[1m[4m/[0m[24m[K[78C[0m[49m[39m[34m─╯[39m[80D[90mGAVEL[39m[4mb[24m[0m[24m [39m [39m [39m [39m [39m [?1l[?2004l[?25l[A[A[0m[27m[24m[J[0m[49m[27m[24m[32m❯[0m[32m[49m[39m[27m[24m [32mcd[39m [4mDocumentos/htb[24m[K[?25h
+]2;cd Documentos/htb]1;cd[1m[7m%[27m[1m[0m                                                                                                       ]2;mat@mat:~/Documentos/htb]1;..ocumentos/htb]7;file://mat/home/mat/Documentos/htb\[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m main [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                        [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:26:30[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?1h[?2004h[H[2J[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m main [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                        [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:26:30[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?25l[A[A[0m[27m[24m[J[0m[34m[49m[39m
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m main [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                        [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:26:30[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?25hgit remote set-url origin git@github.com:mat1520/HACK-THE-BOX.git
+[K[A[4C[32mg[32mi[32mt[39m[1B[K[?1l[?2004l[?25l[A[A[0m[27m[24m[J[0m[49m[27m[24m[32m❯[0m[32m[49m[39m[27m[24m [32mgit[39m remote set-url origin git@github.com:mat1520/HACK-THE-BOX.git[K
+[K[?25h[K
+]2;git remote set-url origin git@github.com:mat1520/HACK-THE-BOX.git]1;git[1m[7m%[27m[1m[0m                                                                                                       ]2;mat@mat:~/Documentos/htb]1;..ocumentos/htb]7;file://mat/home/mat/Documentos/htb\[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m main [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                        [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:26:35[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?1h[?2004hgit remote -v
+[K[A[4C[32mg[32mi[32mt[39m[1B[K[?1l[?2004l[?25l[A[A[A[0m[27m[24m[J[0m[49m[27m[24m[32m❯[0m[32m[49m[39m[27m[24m [32mgit[39m remote -v[K
+[K[?25h[K
+]2;git remote -v]1;gitorigin	git@github.com:mat1520/HACK-THE-BOX.git (fetch)
+origin	git@github.com:mat1520/HACK-THE-BOX.git (push)
+[1m[7m%[27m[1m[0m                                                                                                       ]2;mat@mat:~/Documentos/htb]1;..ocumentos/htb]7;file://mat/home/mat/Documentos/htb\[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m main [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                        [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:26:38[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?1h[?2004hssh -T git@github.com
+git push[K
+[K[A[A[4C[32ms[32ms[32mh[39m[1B[32mg[32mi[32mt[39m[1B[K[?1l[?2004l[?25l[A[A[A[A[0m[27m[24m[J[0m[49m[27m[24m[32m❯[0m[32m[49m[39m[27m[24m [32mssh[39m -T git@github.com[K
+[32mgit[39m push[K
+[K[?25h[K
+]2;ssh -T git@github.com; git push]1;git@github.comThe authenticity of host 'github.com (140.82.112.4)' can't be established.
+ED25519 key fingerprint is: SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Hi mat1520! You've successfully authenticated, but GitHub does not provide shell access.
+Everything up-to-date
+[1m[7m%[27m[1m[0m                                                                                                       ]2;mat@mat:~/Documentos/htb]1;..ocumentos/htb]7;file://mat/home/mat/Documentos/htb\[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m main [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                  [0m[49m[33m  5s[0m[33m[49m[33m[0m[33m[49m[33m[0m[33m[49m[36m   scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:26:50[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?1h[?2004h[?1l[?2004l[?25l[A[A[0m[27m[24m[J[0m[49m[27m[24m[32m❯[0m[32m[49m[39m[27m[24m [K[?25h
+[1m[7m%[27m[1m[0m                                                                                                       ]2;mat@mat:~/Documentos/htb]1;..ocumentos/htb]7;file://mat/home/mat/Documentos/htb\[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m main [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                        [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:26:50[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?1h[?2004h[H[2J[0m[27m[24m[J[0m[34m[49m[39m
+
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m main [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                        [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:26:50[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?25l[A[A[0m[27m[24m[J[0m[34m[49m[39m
+[A[34m╭─[0m[34m[49m[30m [0m[30m[49m[39m[0m[49m[39m[0m[49m [0m[49m[34m  [34m~[0m[34m[49m[34m/Documentos/[34mhtb[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[0m[33m[49m[32m [0m[32m[49m[33m [32m main [33m!1[0m[33m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                        [0m[49m[36m  scripts[0m[36m[49m[36m[0m[36m[49m[36m[0m[36m[49m[36m   20:26:50[0m[36m[49m[36m[0m[36m[49m[36m[49m[30m [0m[30m[49m[36m[0m[36m[49m[39m[34m─╮
+[34m╰─[0m[34m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[96C[0m[49m[39m[34m─╯[39m[98D[?25hg[32mg[39m[32mg[39m[90mit remote -v[39m
+[K[A[5C[32mg[32mi[39m[1B[K[A[6C[1m[31mg[1m[31mi[0m[39m[1m[31mg[1m[31mi[1m[31mt[0m[39m[0m[32mg[0m[32mi[0m[32mt[39m[32mt[32m [39m[32mt[39m[39m [39mp[39m [39m [39m [39m [39m [39m [39m [39m [1B[K[A[9C[90mush -u --force-with-lease origin master[1B[39m[K[A[9C[39my[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [1B[K[A[10C [90mush -u --force-with-lease origin master[1B[39m[K[A[9C[39mu[1B[K[A[10C[39ms[39mh[39m [39m,[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [1B[K[A[14C [90m-u --force-with-lease origin master[1B[39m[K[A[13C[39mm[39m [39m [39m 
