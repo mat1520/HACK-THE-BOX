@@ -1,0 +1,7 @@
+How many TCP ports are open? ANSWER 3, After running a Security Snapshot, the browser is redirected to a path of the format /[something]/[id], where [id] represents the id number of the scan. What is the [something]? ANSWER data
+"Are you able to get to other users' scans?
+ANSWER yes"
+
+Which application layer protocol in the pcap file can the sensetive data be found in?
+
+0
