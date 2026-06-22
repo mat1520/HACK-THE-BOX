@@ -15,3 +15,9 @@
 - IMDS path: /latest/meta-data/iam/security-credentials/nimbus-web-role
 - Extracted: AccessKeyId, SecretAccessKey, SessionToken
 - Also: local-ipv4 = 10.0.1.42, local-hostname = ip-10-0-1-42.ec2.internal
+
+## AWS Emulator Enumeration
+- sts: arn:aws:sts::847219365028:assumed-role/nimbus-web-role/i-0a1b2c3d4e5f6789a
+- sqs list-queues: http://floci:4566/847219365028/nimbus-jobs
+- Role scope: sqs:SendMessage only on nimbus-jobs
+- "floci" = internal emulator hostname at :4566
