@@ -1,0 +1,10 @@
+# Nmap 7.95 scan initiated Sun Jun 21 21:30:41 2026 as: nmap -p- --min-rate 2000 -oN Nimbus/nmapScan.txt 10.129.16.167
+Warning: 10.129.16.167 giving up on port because retransmission cap hit (10).
+Nmap scan report for 10.129.16.167
+Host is up (0.10s latency).
+Not shown: 62578 closed tcp ports (conn-refused), 2955 filtered tcp ports (no-response)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+# Nmap done at Sun Jun 21 21:32:16 2026 -- 1 IP address (1 host up) scanned in 94.40 seconds
